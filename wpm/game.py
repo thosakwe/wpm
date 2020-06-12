@@ -128,7 +128,7 @@ class GameManager(object):
         """Words per minute."""
         if self.start is None:
             return 0
-        elif not elapsed:
+        elif elapsed <= 0:
             return 0
         return min((60.0 * self.position / 5.0) / elapsed, 999)
 
@@ -136,7 +136,7 @@ class GameManager(object):
         """Characters per second."""
         if self.start is None:
             return 0
-        elif not elapsed:
+        elif elapsed <= 0:
             return 0
         return min(float(self.position) / elapsed, 99)
 
